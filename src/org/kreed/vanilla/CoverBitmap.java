@@ -142,8 +142,9 @@ public final class CoverBitmap {
 		if (TEXT_SIZE == -1)
 			loadTextSizes(context);
 
-		Paint paint = new Paint();
+		Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
 		paint.setAntiAlias(true);
+		paint.setFilterBitmap(true);
 
 		String title = song.title == null ? "" : song.title;
 		String album = song.album == null ? "" : song.album;
@@ -181,7 +182,7 @@ public final class CoverBitmap {
 		int bitmapWidth = Math.max(coverWidth, boxWidth);
 		int bitmapHeight = Math.max(coverHeight, boxHeight);
 
-		Bitmap bitmap = Bitmap.createBitmap(bitmapWidth, bitmapHeight, Bitmap.Config.RGB_565);
+		Bitmap bitmap = Bitmap.createBitmap(bitmapWidth, bitmapHeight, Bitmap.Config.ARGB_8888);
 		Canvas canvas = new Canvas(bitmap);
 
 		if (cover != null) {

@@ -119,7 +119,7 @@ public class FourLongWidget extends AppWidgetProvider {
 		}
 
 		boolean playing = (state & PlaybackService.FLAG_PLAYING) != 0;
-		views.setImageViewResource(R.id.play_pause, playing ? R.drawable.pause : R.drawable.play);
+		views.setImageViewResource(R.id.play_pause, playing ? R.drawable.ic_appwidget_music_pause : R.drawable.ic_appwidget_music_play);
 
 		Intent intent;
 		PendingIntent pendingIntent;
